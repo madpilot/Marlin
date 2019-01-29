@@ -799,8 +799,8 @@
 #if ENABLED(ARC_SUPPORT)
   #define MM_PER_ARC_SEGMENT  1   // Length of each arc segment
   #define N_ARC_CORRECTION   25   // Number of intertpolated segments between corrections
-  //#define ARC_P_CIRCLES         // Enable the 'P' parameter to specify complete circles
-  //#define CNC_WORKSPACE_PLANES  // Allow G2/G3 to operate in XY, ZX, or YZ planes
+  #define ARC_P_CIRCLES         // Enable the 'P' parameter to specify complete circles
+  #define CNC_WORKSPACE_PLANES  // Allow G2/G3 to operate in XY, ZX, or YZ planes
 #endif
 
 // Support for G5 with XYZE destination and IJPQ offsets. Requires ~2666 bytes.
@@ -1376,15 +1376,10 @@
    *  set the following for your controller (ALL MUST BE SET)
    */
 
-  #define SPEED_POWER_SLOPE    118.4
+  #define SPEED_POWER_SLOPE      0.3922
   #define SPEED_POWER_INTERCEPT  0
-  #define SPEED_POWER_MIN    0
-  #define SPEED_POWER_MAX    10000    // SuperPID router controller 0 - 30,000 RPM
-
-  //#define SPEED_POWER_SLOPE      0.3922
-  //#define SPEED_POWER_INTERCEPT  0
-  //#define SPEED_POWER_MIN       10
-  //#define SPEED_POWER_MAX      100      // 0-100%
+  #define SPEED_POWER_MIN       10
+  #define SPEED_POWER_MAX      100      // 0-100%
 #endif
 
 /**
