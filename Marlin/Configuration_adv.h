@@ -1,4 +1,4 @@
-/**
+  /**
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -1358,9 +1358,9 @@
 #if ENABLED(SPINDLE_LASER_ENABLE)
   #define SPINDLE_LASER_PWM_PIN         HEATER_0_PIN     // Use the Hotend output
   #define SPINDLE_LASER_ENABLE_PIN      HEATER_BED_PIN
-  #define SPINDLE_LASER_ENABLE_INVERT   false  // set to "true" if the on/off function is reversed
+  #define SPINDLE_LASER_ENABLE_INVERT   true  // set to "true" if the on/off function is reversed
   #define SPINDLE_LASER_PWM             true   // set to true if your controller supports setting the speed/power
-  #define SPINDLE_LASER_PWM_INVERT      false   // set to "true" if the speed/power goes up when you want it to go slower
+  #define SPINDLE_LASER_PWM_INVERT      true   // set to "true" if the speed/power goes up when you want it to go slower
   #define SPINDLE_LASER_POWERUP_DELAY   5000   // delay in milliseconds to allow the spindle/laser to come up to speed/power
   #define SPINDLE_LASER_POWERDOWN_DELAY 5000   // delay in milliseconds to allow the spindle to stop
   #define SPINDLE_DIR_CHANGE            false   // set to true if your spindle controller supports changing spindle direction
@@ -1378,7 +1378,7 @@
 
   #define SPEED_POWER_SLOPE      0.3922
   #define SPEED_POWER_INTERCEPT  0
-  #define SPEED_POWER_MIN       10
+  #define SPEED_POWER_MIN        0
   #define SPEED_POWER_MAX      100      // 0-100%
 #endif
 
