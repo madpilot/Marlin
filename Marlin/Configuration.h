@@ -901,7 +901,7 @@
  */
 
 // Min software endstops constrain movement within minimum coordinate bounds
-//#define MIN_SOFTWARE_ENDSTOPS
+#define MIN_SOFTWARE_ENDSTOPS
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
@@ -909,7 +909,7 @@
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
-//#define MAX_SOFTWARE_ENDSTOPS
+#define MAX_SOFTWARE_ENDSTOPS
 #if ENABLED(MAX_SOFTWARE_ENDSTOPS)
   #define MAX_SOFTWARE_ENDSTOP_X
   #define MAX_SOFTWARE_ENDSTOP_Y
@@ -1019,17 +1019,17 @@
 #endif
 
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
-	#define MIN_PROBE_X -X_BED_SIZE / 2
-	#define MIN_PROBE_Y -Y_BED_SIZE / 2
+	#define MIN_PROBE_X 0
+	#define MIN_PROBE_Y 0
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #define GRID_MAX_POINTS_X X_BED_SIZE / LEVELED_SEGMENT_LENGTH
+  #define GRID_MAX_POINTS_Y Y_BED_SIZE / LEVELED_SEGMENT_LENGTH
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION -X_BED_SIZE / 2
-  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE / 2
-  #define FRONT_PROBE_BED_POSITION -Y_BED_SIZE / 2
-  #define BACK_PROBE_BED_POSITION Y_BED_SIZE / 2
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_Y
+  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1126,7 +1126,7 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-#define BED_CENTER_AT_0_0
+//#define BED_CENTER_AT_0_0
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
